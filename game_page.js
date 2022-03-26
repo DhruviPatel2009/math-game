@@ -8,8 +8,8 @@ document.getElementById("player1_name").innerHTML=player1_name+" : ";
 document.getElementById("player2_name").innerHTML=player2_name+" : ";
 document.getElementById("player1_score").innerHTML=player1_score;
 document.getElementById("player2_score").innerHTML=player2_score;
-document.getElementById("player1_question").innerHTML="Question Turn - "+player1_name;
-document.getElementById("player2_answer").innerHTML="Answer Turn - "+player2_name;
+document.getElementById("player_question").innerHTML="Question Turn - "+player1_name;
+document.getElementById("player_answer").innerHTML="Answer Turn - "+player2_name;
 
 function send(){
     number1=document.getElementById("number1").value;
@@ -29,8 +29,7 @@ question_turn="player1";
 answer_turn="player2";
 
 function check(){
-    question_turn="player1";
-answer_turn="player2";
+    
     get_answer=document.getElementById("input_check_box").value;
     if(get_answer==actual_answer){
         if(answer_turn=="player1"){
@@ -48,7 +47,7 @@ answer_turn="player2";
         question_turn="player2";
         document.getElementById("player_question").innerHTML="Question Turn - "+player2_name;
     }   
-    if(question_turn=="player2"){
+    else{
        question_turn="player1";
        document.getElementById("player_question").innerHTML="Question Turn - "+player1_name;
    }   
@@ -57,8 +56,9 @@ answer_turn="player2";
        answer_turn="player2";
        document.getElementById("player_answer").innerHTML="Answer Turn - "+player2_name;
    }  
-   if(answer_turn=="player2"){
+   else{
        answer_turn="player1";
        document.getElementById("player_answer").innerHTML="Answer Turn - "+player1_name;
-   }    
+   }   
+   document.getElementById("output").innerHTML=""; 
 }
